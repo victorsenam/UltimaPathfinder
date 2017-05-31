@@ -160,7 +160,7 @@ class PathFinder {
         }
         // exit();
 
-        return $returnData;
+        return array_reverse($returnData);
     }
 
      public function draw(Path $path){

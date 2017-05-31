@@ -139,21 +139,12 @@ class PathFinder {
         $to = $this->map->destination->getKey();
         $mapName = $this->map->mapName;
         
-        /* @var $node Node */
-        // foreach($path->nodes as $node){
-        //     if($node->parentDirection!=null){
-        //         $node->parentDirection = Config::getInverseDirection($node->parentDirection); //TODO: use Helper class!
-        //     }
-        // }
-        
         //draw path on map
         $returnData = [];
         for($y = 1; $y <= $this->map->height; $y++){
             for($x = 1; $x <= $this->map->width; $x++){
                 $node = $this->map->getNode($x, $y);
                 $nodeRepresentation = Config::getNodeRepresentation($node->type);
-                
-                //overwrite node representation for path nodes
                 if(
                     array_key_exists($node->getKey(), $path->nodes) && 
                     $node->type != NodeType::SOURCE &&
@@ -177,21 +168,12 @@ class PathFinder {
         $to = $this->map->destination->getKey();
         $mapName = $this->map->mapName;
         
-        /* @var $node Node */
-        // foreach($path->nodes as $node){
-        //     if($node->parentDirection!=null){
-        //         $node->parentDirection = Config::getInverseDirection($node->parentDirection); //TODO: use Helper class!
-        //     }
-        // }
-        
         //draw path on map
         $returnData = "";
         for($y = 1; $y <= $this->map->height; $y++){
             for($x = 1; $x <= $this->map->width; $x++){
                 $node = $this->map->getNode($x, $y);
                 $nodeRepresentation = Config::getNodeRepresentation($node->type);
-                
-                //overwrite node representation for path nodes
                 if(
                     array_key_exists($node->getKey(), $path->nodes) && 
                     $node->type != NodeType::SOURCE &&

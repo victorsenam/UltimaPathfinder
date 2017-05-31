@@ -73,8 +73,8 @@ class Map {
                 }
                 $y++;
             }
-            $this->width = --$x;
-            $this->height = --$y;
+            $this->width = $x-1;
+            $this->height = $y-1;
             $this->nodes = $nodes;
         } else if(file_exists($mapFile)) {
             //make coordinates start at 1 so we can use coordinates as array keys
